@@ -1,4 +1,4 @@
-const TransactionForm = () => {
+const TransactionForm = ({ openCategories }) => {
   return (
     <form action="submit">
       <label htmlFor="date">
@@ -11,18 +11,17 @@ const TransactionForm = () => {
       </label>
       <label htmlFor="">
         <p>Category</p>
-        <input type="button" value="Category" />
+        <input type="button" value={'Category'} onClick={() => openCategories()} />
       </label>
       <label htmlFor="">
         <p>Sum</p>
-        <input type="text" value="" />
+        <input type="text" />
       </label>
       <label htmlFor="">
         <p>Currency</p>
-        <input type="button" value="Currency" />
+        <input type="button" value={'UAH'} onChange={null} />
       </label>
       <div>
-        {' '}
         <input type="text" placeholder="Comment" name="" id="" />
       </div>
     </form>

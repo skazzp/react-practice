@@ -1,8 +1,20 @@
-const MainButtons = () => {
+const MainButtons = ({ changePage }) => {
   return (
     <div>
-      <button>Expenses</button>
-      <button>Income</button>
+      <button
+        onClick={() => {
+          changePage('exp');
+        }}
+      >
+        Expenses
+      </button>
+      <button
+        onClick={() => {
+          changePage('inc');
+        }}
+      >
+        Income
+      </button>
     </div>
   );
 };

@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 
-const Categories = ({ categoriesList }) => {
+const Categories = ({ categoriesList, closeCategories }) => {
   return (
     <>
-      <Header btnContent={undefined} title={'Categories'} />
+      <Header btnContent={'back'} title={'Categories'} closeCategories={closeCategories} />
       <ul>
         {categoriesList.map(category => {
           return <li key={category.id}>{category.name}</li>;
@@ -20,11 +20,11 @@ const Categories = ({ categoriesList }) => {
 
 export default Categories;
 
-Categories.propTypes = {
-  categoriesList: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.oneOfType[(PropTypes.number, PropTypes.string)],
-      name: PropTypes.string,
-    })
-  ),
-};
+// Categories.propTypes = {
+//   categoriesList: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.oneOfType[(PropTypes.number, PropTypes.string)],
+//       name: PropTypes.string,
+//     })
+//   ),
+// };
