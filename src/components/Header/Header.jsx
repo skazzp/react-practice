@@ -1,9 +1,13 @@
 // import PropTypes from 'prop-types';
 
-const Header = ({ title, btnContent }) => {
+const Header = ({ title, btnContent, closeCategories }) => {
   return (
     <header>
-      {btnContent && <button>{btnContent}</button>}
+      {btnContent && (
+        <button type="button" onClick={closeCategories}>
+          {btnContent}
+        </button>
+      )}
       <h1>{title}</h1>
     </header>
   );
