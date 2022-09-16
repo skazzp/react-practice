@@ -17,7 +17,7 @@ class MainPage extends Component {
   };
   handleChange = e => {
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
     this.setState({ [name]: value });
   };
   openCategories = () => {
@@ -26,6 +26,10 @@ class MainPage extends Component {
   closeCategories = () => {
     this.setState({ isCategories: false });
   };
+  setCategory = categoryName => {
+    this.setState({ category: categoryName });
+  };
+
   render() {
     const { isCategories, ...dataForm } = this.state;
     return (
@@ -37,11 +41,16 @@ class MainPage extends Component {
               openCategories={this.openCategories}
               handleChange={this.handleChange}
               dataForm={dataForm}
+              cbOnSubmit={this.props.addTransaction}
             />
             <MainButtons changePage={this.props.changePage} />
           </>
         ) : (
-          <Categories categoriesList={categoriesList} closeCategories={this.closeCategories} />
+          <Categories
+            setCategory={this.setCategory}
+            categoriesList={categoriesList}
+            closeCategories={this.closeCategories}
+          />
         )}
       </>
     );

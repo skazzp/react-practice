@@ -1,21 +1,23 @@
+import { Wrapper, Button } from './MainButtons.styled';
+
 const MainButtons = ({ changePage }) => {
   return (
-    <div>
-      <button
+    <Wrapper>
+      <Button
         onClick={() => {
           changePage('exp');
         }}
       >
         Expenses
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => {
           changePage('inc');
         }}
       >
         Income
-      </button>
-    </div>
+      </Button>
+    </Wrapper>
   );
 };
 

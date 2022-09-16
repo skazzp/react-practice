@@ -1,15 +1,19 @@
-// import PropTypes from 'prop-types';
-
+import { HeaderStyled, Button } from './Header.styled';
+import sprite from '../../assets/icons/sprite.svg';
 const Header = ({ title, btnContent, closeCategories }) => {
   return (
-    <header>
-      {btnContent && (
-        <button type="button" onClick={closeCategories}>
-          {btnContent}
-        </button>
+    <HeaderStyled>
+      {closeCategories && (
+        <Button type="button" onClick={() => closeCategories()}>
+          {
+            <svg>
+              <use href={sprite + '#icon-arrow-left2'}></use>
+            </svg>
+          }
+        </Button>
       )}
       <h1>{title}</h1>
-    </header>
+    </HeaderStyled>
   );
 };
 export default Header;

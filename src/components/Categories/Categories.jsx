@@ -1,13 +1,26 @@
 // import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 
-const Categories = ({ categoriesList, closeCategories }) => {
+const Categories = ({ categoriesList, closeCategories, setCategory }) => {
   return (
     <>
       <Header btnContent={'back'} title={'Categories'} closeCategories={closeCategories} />
       <ul>
-        {categoriesList.map(category => {
-          return <li key={category.id}>{category.name}</li>;
+        {categoriesList.map(({ id, category }) => {
+          return (
+            <li key={id}>
+              <div>{category}</div>
+              <button
+                onClick={() => {
+                  // console.log(id, category);
+                  setCategory(category);
+                  closeCategories();
+                }}
+              >
+                {category}
+              </button>
+            </li>
+          );
         })}
       </ul>
       <form action="">

@@ -1,10 +1,10 @@
 export let categoriesList = [
   {
-    name: 'food',
+    category: 'food',
     id: '1',
   },
   {
-    name: 'random',
+    category: 'random',
     id: '2',
   },
 ];
